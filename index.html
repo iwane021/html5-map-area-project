@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Milestone</title>
+		<style>	
+		* {
+			font-family: Helvetica, sans-serif;
+			color: #333447;
+			line-height: 1;
+		}
+		html {
+			font-family: sans-serif;
+			-webkit-text-size-adjust: 100%;
+			-ms-text-size-adjust: 100%;
+		}
+		body {
+			margin: 0;
+		}
+		h1, p {
+			text-align: center;
+		}
+		area { outline:none; }
+		
+		@-webkit-keyframes pulse {
+			0% {
+				-webkit-box-shadow: 0 0 0 0 rgba(255, 15, 35, 0.4);
+			}
+			70% {
+				-webkit-box-shadow: 0 0 0 10px rgba(255, 15, 35, 0);
+			}
+			100% {
+				-webkit-box-shadow: 0 0 0 0 rgba(255, 15, 35, 0);
+			}
+		}
+		@keyframes pulse {
+			0% {
+				-moz-box-shadow: 0 0 0 0 rgba(255, 15, 35, 0.4);
+				box-shadow: 0 0 0 0 rgba(255, 15, 35, 0.4);
+			}
+			70% {
+				-moz-box-shadow: 0 0 0 10px rgba(255, 15, 35, 0);
+				box-shadow: 0 0 0 10px rgba(255, 15, 35, 0);
+			}
+			100% {
+				-moz-box-shadow: 0 0 0 0 rgba(255, 15, 35, 0);
+				box-shadow: 0 0 0 0 rgba(255, 15, 35, 0);
+			}
+		}
+		
+		.mpv {
+			position: absolute;
+			margin-left: 2px;
+			width: 15px;
+			height: 15px;
+			border: 0.1em solid #f9f9f9;
+			border-radius: 50%;
+			background: #ff0f23;
+			opacity: 0.8;
+			cursor: pointer;
+			box-shadow: 0 0 0 rgba(255, 15, 35, 0.4);
+			animation: pulse 2s infinite;
+			z-index: 2;
+		}
+		#video1 { top:22px; left:230px; } /*20,241*/
+		#video2 { top:19px; left:596px; } /*16,627*/
+		#video3 { top:21px; left:866px; } /*18,913*/
+		#video4 { top:187px; left:61px; } /*194,62*/
+		#video5 { top:186px; left:707px; } /*193,745*/
+		
+		#wrap {
+			position: relative;
+			min-width: 780px;
+			max-width: 1260px;
+			margin: 0 auto;
+			height: 100vh;
+			background: #fff;
+		}
+		#head { padding: 30px 0 15px; }
+		#head > h1 { letter-spacing: 2px; margin:0; }
+		#head > p { line-height: 0.2; }
+		#head .boxs { 
+			display:block;
+			margin: 30px 0px;
+			width:100%; 
+		}
+		#head .line-blue { 
+			margin:0 auto;
+			width:180px;
+			max-width:100%;
+			height:5px;
+			background:#0099cc;
+		}
+		#container { 
+			position: relative;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+		#container img { 
+			display: block;
+			margin: 0 auto;
+			max-width: 100%;
+		}
+		#footer { 
+			position: relative;
+			text-align: center;
+			margin: 20px 0;
+			width: 100%;
+		}
+		
+		video::-webkit-media-controls {
+			display:none !important;
+		}
+		
+		@media (min-width: 768px) and (max-width: 1200px) {
+			.container {
+				width: 1300px;
+			}
+		}
+		@media (min-width: 1200px) {
+			.container {
+				width: 1300px;
+			}
+		}
+		</style>
+	</head>
+<body>
+
+<div id="wrap">
+	<div id="head">
+		<h1>Milestone</h1>
+		<p style="font-size:18px;"><i>tutorial pembuatan HTML Map sangat mudah</i></p>
+		<div class="boxs">
+			<div class="line-blue"></div>
+		</div>
+	</div>
+	
+	<div id="container">
+		<img src="assets/images/image-sample.png" usemap="#image-map" id="Img">
+
+		<map name="image-map" id="Map">
+			<area id="video1" class="mpv" title="70" href="javascript:void(0);" coords="241,20,412,174" shape="rect">
+			<area id="video2" class="mpv" title="80" href="javascript:void(0);" coords="627,16,881,177" shape="rect">
+			<area id="video3" class="mpv" title="90" href="javascript:void(0);" coords="913,18,1082,173" shape="rect">
+			<area id="video4" class="mpv" title="00" href="javascript:void(0);" coords="62,194,301,356" shape="rect">
+			<area id="video5" class="mpv" title="10" href="javascript:void(0);" coords="745,193,994,352" shape="rect">
+		</map>
+		
+		<div id="footer">&copy; Copyright by <a href="https://www.tukarpengetahuan.com">www.tukarpengetahuan.com</a></div>
+	</div>
+
+	
+	<video controls autoplay preload = "none" id="Video1" style="display:none;">
+		<source src="rain.mp4" type="video/mp4">
+    </video>
+	<video controls autoplay preload = "none" id="Video2" style="display:none;">
+		<source src="rain.mp4" type="video/mp4">
+    </video>
+	<video controls autoplay preload = "none" id="Video3" style="display:none;">
+		<source src="rain.mp4" type="video/mp4">
+    </video>
+	<video controls autoplay preload = "none" id="Video4" style="display:none;">
+		<source src="rain.mp4" type="video/mp4">
+    </video>
+	<video controls autoplay preload = "none" id="Video5" style="display:none;">
+		<source src="rain.mp4" type="video/mp4">
+    </video>
+	
+</div>
+
+	<script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/imageMapResizer.js"></script>
+	<script>			
+		$(document).ready(function() {
+			
+			$('map').imageMapResize();
+			
+			var map = document.getElementById("Map");
+			map.addEventListener("click", function(e) {
+				callAction(e.target);
+			});				
+			
+			function callAction(area) {
+				var vid_id;
+				switch (area.id) {
+					case "video1":
+						vid_id = "1";
+						break;
+					case "video2":
+						vid_id = "2";
+						break;
+					case "video3":
+						vid_id = "3";
+						break;
+					case "video4":
+						vid_id = "4";
+						break;
+					case "video5":
+						vid_id = "5";
+				}
+								
+				var video = document.getElementById("Video" + vid_id);
+				video.autoplay = false;
+				
+				//Hide video  ending
+				video.onended = function() {
+					video.webkitExitFullscreen();
+					video.style.display = "none";
+				};
+				
+				if (video.style.display === "none") {
+					video.style.display = "block";
+				}
+				
+				//Show video fullScreen
+				video.webkitRequestFullScreen();
+				video.play();
+
+				//Checking if ESC keypress
+				$('video#Video' + vid_id).bind('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
+					var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
+					var event = state ? 'FullscreenOn' : 'FullscreenOff';
+
+					if(event == 'FullscreenOff'){
+						video.pause();
+						video.style.display = "none";
+					}
+				});
+				
+			} //End callAction
+			
+			//Set animation pulse
+			$(window).on('resize', function(){
+				var vd1;
+				setTimeout(function(){
+					vd1 = $("#video1").attr("coords").split(",");
+					$('#video1').css({"top": eval(vd1[1])+eval(4) +"px", "left": eval(vd1[0])+eval(3) +"px"});
+					localStorage.setItem('vd1', JSON.stringify(vd1));
+					
+					vd2 = $("#video2").attr("coords").split(",");
+					$('#video2').css({"top": eval(vd2[1])+eval(4) +"px", "left": eval(vd2[0])+eval(3) +"px"});
+					localStorage.setItem('vd2', JSON.stringify(vd2));
+					
+					vd3 = $("#video3").attr("coords").split(",");
+					$('#video3').css({"top": eval(vd3[1])+eval(4) +"px", "left": eval(vd3[0])+eval(3) +"px"});
+					localStorage.setItem('vd3', JSON.stringify(vd3));
+					
+					vd4 = $("#video4").attr("coords").split(",");
+					$('#video4').css({"top": eval(vd4[1])+eval(4) +"px", "left": eval(vd4[0])+eval(3) +"px"});
+					localStorage.setItem('vd4', JSON.stringify(vd4));
+					
+					vd5 = $("#video5").attr("coords").split(",");
+					$('#video5').css({"top": eval(vd5[1])+eval(4) +"px", "left": eval(vd5[0])+eval(3) +"px"});
+					localStorage.setItem('vd5', JSON.stringify(vd5));
+					
+				}, 350); //3.5 second timeout in milliseconds	
+				
+				return;
+			});
+			
+			//Set value for reload page
+			$(window).load(function() {
+				var vd1_load = JSON.parse(localStorage.getItem('vd1'));
+				var vd2_load = JSON.parse(localStorage.getItem('vd2'));
+				var vd3_load = JSON.parse(localStorage.getItem('vd3'));
+				var vd4_load = JSON.parse(localStorage.getItem('vd4'));
+				var vd5_load = JSON.parse(localStorage.getItem('vd5'));
+				
+				$('#video1').css({"top": eval(vd1_load[1])+eval(4) +"px", "left": eval(vd1_load[0])+eval(3) +"px"});
+				$('#video2').css({"top": eval(vd2_load[1])+eval(4) +"px", "left": eval(vd2_load[0])+eval(3) +"px"});
+				$('#video3').css({"top": eval(vd3_load[1])+eval(4) +"px", "left": eval(vd3_load[0])+eval(3) +"px"});
+				$('#video4').css({"top": eval(vd4_load[1])+eval(4) +"px", "left": eval(vd4_load[0])+eval(3) +"px"});
+				$('#video5').css({"top": eval(vd5_load[1])+eval(4) +"px", "left": eval(vd5_load[0])+eval(3) +"px"});
+			});
+			
+			return;
+		});
+		
+	</script>
+</body>
+</html>
